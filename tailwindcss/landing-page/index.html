@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .grid-form {
+        display: grid;
+        grid-template-columns: 10rem 1fr;
+        grid-auto-flow: column;
+        align-items: center;
+      }
+      .t-checkbox {
+        height: 30px;
+      }
+    </style>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js"
+      defer
+    ></script>
+  </head>
+  <body class="bg-gray-50 text-sm h-screen">
+    <div
+      class="
+        max-w-screen-lg
+        bg-white
+        mx-auto
+        border border-gray-200
+        rounded-lg
+        shadow-md
+        p-5
+        m-5
+      "
+    >
+      <div x-data="{ open: true }" class="grid grid-cols-2 gap-x-16 relative">
+        <!-- BEGIN HEADING -->
+        <section
+          @@click="open = !open"
+          class="
+            absolute
+            col-span-2
+            -top-8
+            bg-gradient-to-r
+            from-blue-400
+            to-blue-600
+            text-white
+            px-3
+            py-1
+            rounded-md
+            border border-blue-400
+            flex
+            items-center
+            cursor-pointer
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+            />
+          </svg>
+          <p>Kết quả Recare</p>
+        </section>
+        <!-- END HEADING -->
+        <!-- <template x-if="open">aa</template> -->
+        <!-- BEGIN LEFT SECTION -->
+        <section
+          x-show="open"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100 transform scale-100"
+          x-transition:leave-end="opacity-0 transform scale-90"
+          class="space-y-1 mt-2"
+        >
+          <!-- BEGIN INPUT -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">Kết quả</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">Chi tiết xử lý</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">Thông tin liên hệ</span>
+            <div class="flex rounded-md shadow-sm">
+              <input
+                type="text"
+                name="text"
+                class="
+                  w-full
+                  py-1
+                  px-3
+                  rounded-tl-md rounded-bl-md
+                  border border-gray-200
+                  focus:outline-none
+                "
+              /><input
+                type="text"
+                name="text"
+                class="
+                  w-full
+                  py-1
+                  px-3
+                  rounded-tr-md rounded-br-md
+                  border border-gray-200
+                  focus:outline-none
+                "
+              />
+            </div>
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">CLKM Doanh thu</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate"> TG trả trước</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">Số tháng trả trước</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">CLKM Combo</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+        </section>
+        <!-- END LEFT SECTION -->
+
+        <!-- BEGIN RIGHT SECTION -->
+        <section
+          x-show="open"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100 transform scale-100"
+          x-transition:leave-end="opacity-0 transform scale-90"
+          class="space-y-1 mt-2"
+        >
+          <!-- BEGIN INPUT -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">Tiền trả trước theo CLKM</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate"
+              >Tiền trả trước NET phải thanh toán</span
+            >
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate"
+              >Tiền thuê thiết bị đầu cuối</span
+            >
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate">Ghi chú</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col">
+            <span class="text-gray-900 truncate"> Đánh giá tính cước</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col t-checkbox">
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                class="form-checkbox h-4 w-4 text-blue-500"
+              /><span class="ml-2 text-gray-700">KM ưu tiên</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input
+                type="checkbox"
+                class="form-checkbox h-4 w-4 text-blue-500"
+              /><span class="ml-2 text-gray-700">KM thông thường</span>
+            </label>
+          </div>
+          <!--  -->
+          <div class="grid-form grid-flow-col invisible">
+            <span class="text-gray-900 truncate"> Đánh giá tính cước</span>
+            <input
+              type="text"
+              class="
+                w-full
+                py-1
+                px-3
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+              "
+            />
+          </div>
+          <!--  -->
+          <div class="flex justify-end">
+            <button
+              type="text"
+              class="
+                flex
+                justify-center
+                w-52
+                py-1
+                px-3
+                bg-blue-500
+                text-white
+                hover:bg-blue-400
+                focus:bg-blue-600
+                focus:ring
+                rounded-md
+                border border-gray-200
+                focus:outline-none
+                duration-300
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                />
+              </svg>
+              Cập nhật
+            </button>
+          </div>
+          <!--  -->
+        </section>
+        <!-- END RIGHT SECTION -->
+      </div>
+    </div>
+  </body>
+</html>

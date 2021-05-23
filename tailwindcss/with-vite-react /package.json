@@ -1,0 +1,21 @@
+{
+  "name": "tailwind-reusable-component",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev":"vite",
+    "build":"vite build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react-refresh": "^1.3.3",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.15",
+    "tailwindcss": "^2.1.2",
+    "vite": "^2.3.3"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
